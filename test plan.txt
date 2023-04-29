@@ -1,0 +1,39 @@
+Test scrop: Input seriel number and get the warranty result. 
+Test environment: Chrome brwoser and the link is https://www.barco.com/eu-en/support/clickshare-extended-warranty/warranty
+
+I will divide the testing scope into two parts. One is UI verification and the other is functaional verification.
+
+A. For the UI part, I will verify if the user interface is correct in different languages. 
+
+	1. Verify the display of the user interface in different languages, the "Get info" button should be translated to correct language. (For AT, you can see A_1.py)
+		1-1. Check the UI layout when the language is 日本語. Expected result is "情報を入手". 
+		1-2. Check the UI layout when the language is Koren. Expected result is "Get info".
+		1-3. Check the UI layout when the language is Русский. Expected result is "Получить информацию"
+		1-4. Check the UI layout when the language is 中文. Expected result is "获取信息"
+
+	2. Change between two language. For example, change to 中文, and then change to English. The "Get info" button should translated correctly. (For AT, you can see A_2.py)
+	
+B. For functional verification, it will be divided to valid input and invalid input. 
+
+	1. Valid input: (For AT, you can see B_1.py)
+		1-1. Get info when the seriel number is valid. As the specified seriel number "1863552437", check the warranty result should be same as the expected result.  
+		Warranty results for 1863552437,
+                Description        CLICKSHARE CX-50 SET EU
+                Part number        R9861522EU
+                Installation date  10 Feburary 2021
+                Warranty end date  08 Feburary 2022
+
+	2. Invalid input: (For AT, you can see B_2.py)
+		2-1. Get info when the seriel number column is blank. You should receive a corresponding error message.
+		2-2. Get info when the length of seriel number is less than 6 digitals. You should receive a corresponding error message
+		2-3. Get info when the seriel number is invalid, You should receive a corresponding error message
+	
+	3. Invalid input and then valid input: (For AT, you can see B_3.py)
+		3-1. Get info when the seriel number is invalid and then get info again with valid one. You should get the warranty result fo the valid serial number.
+
+
+
+
+
+
+
